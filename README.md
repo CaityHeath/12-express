@@ -1,9 +1,9 @@
 ![CF](http://i.imgur.com/7v5ASc8.png) LAB
 =================================================
 
-## Project Name
+## Express
 
-### Author: Student/Group Name
+### Author: Caity Heath and Becca Lee
 
 ### Links and Resources
 * [repo](http://xyz.com)
