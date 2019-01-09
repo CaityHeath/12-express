@@ -1,0 +1,176 @@
+{
+  "swagger" : "2.0",
+  "info" : {
+    "description" : "This is a simple API",
+    "version" : "1.0.0",
+    "title" : "Caity & Becca API",
+    "license" : {
+      "name" : "MIT",
+      "url" : "https://opensource.org/licenses/MIT"
+    }
+  },
+  "host" : "virtserver.swaggerhub.com",
+  "basePath" : "/beccalee123/caitybeccaapi/1.0.0",
+  "tags" : [ {
+    "name" : "books",
+    "description" : "book db API routes"
+  }, {
+    "name" : "movies",
+    "description" : "movie db API routes"
+  } ],
+  "schemes" : [ "https", "http" ],
+  "paths" : {
+    "/posts" : {
+      "get" : {
+        "tags" : [ "books" ],
+        "summary" : "returns books db",
+        "description" : "returns contents of books db",
+        "produces" : [ "application/json" ],
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "search results matching criteria",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/Books"
+              }
+            }
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "books" ],
+        "summary" : "adds a book to the books db",
+        "description" : "adds a book to the books db",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "newBook",
+          "description" : "new book item",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/Books"
+          }
+        } ],
+        "responses" : {
+          "201" : {
+            "description" : "item created"
+          },
+          "400" : {
+            "description" : "invalid input, object invalid"
+          },
+          "409" : {
+            "description" : "an existing item already exists"
+          }
+        }
+      }
+    },
+    "/movies" : {
+      "get" : {
+        "tags" : [ "movies" ],
+        "summary" : "returns movies db",
+        "description" : "returns contents of movies db",
+        "produces" : [ "application/json" ],
+        "parameters" : [ ],
+        "responses" : {
+          "200" : {
+            "description" : "search results matching criteria",
+            "schema" : {
+              "type" : "array",
+              "items" : {
+                "$ref" : "#/definitions/Movies"
+              }
+            }
+          },
+          "400" : {
+            "description" : "bad input parameter"
+          }
+        }
+      },
+      "post" : {
+        "tags" : [ "movies" ],
+        "summary" : "adds a book to the movies db",
+        "description" : "adds a book to the movies db",
+        "consumes" : [ "application/json" ],
+        "produces" : [ "application/json" ],
+        "parameters" : [ {
+          "in" : "body",
+          "name" : "newMovie",
+          "description" : "new movie item",
+          "required" : false,
+          "schema" : {
+            "$ref" : "#/definitions/Movies"
+          }
+        } ],
+        "responses" : {
+          "201" : {
+            "description" : "item created"
+          },
+          "400" : {
+            "description" : "invalid input, object invalid"
+          },
+          "409" : {
+            "description" : "an existing item already exists"
+          }
+        }
+      }
+    }
+  },
+  "definitions" : {
+    "Books" : {
+      "type" : "object",
+      "required" : [ "article", "author", "name" ],
+      "properties" : {
+        "id" : {
+          "type" : "string",
+          "example" : "1"
+        },
+        "name" : {
+          "type" : "string",
+          "example" : "To Kill a Mockingbird"
+        },
+        "author" : {
+          "type" : "string",
+          "example" : "Harper Lee"
+        },
+        "article" : {
+          "type" : "string",
+          "example" : "Article Title"
+        },
+        "manufacturer" : {
+          "$ref" : "#/definitions/Books"
+        }
+      }
+    },
+    "Movies" : {
+      "type" : "object",
+      "required" : [ "director", "review", "title" ],
+      "properties" : {
+        "id" : {
+          "type" : "string",
+          "example" : "1"
+        },
+        "title" : {
+          "type" : "string",
+          "example" : "Gangs of New York"
+        },
+        "director" : {
+          "type" : "string",
+          "example" : "Martin Scorcese"
+        },
+        "review" : {
+          "type" : "string",
+          "example" : "Pretty solid"
+        },
+        "manufacturer" : {
+          "$ref" : "#/definitions/Movies"
+        }
+      }
+    }
+  }
+}
