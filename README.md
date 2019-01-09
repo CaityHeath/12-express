@@ -1,15 +1,14 @@
 ![CF](http://i.imgur.com/7v5ASc8.png) LAB
 =================================================
 
-## Project Name
+## Express
 
-### Author: Student/Group Name
+### Author: Caity Heath and Becca Lee
 
 ### Links and Resources
-* [repo](http://xyz.com)
-* [travis](http://xyz.com)
-* [back-end](http://xyz.com)
-* [front-end](http://xyz.com)
+![Build Status](https://travis-ci.com/CaityHeath/12-express.svg?branch=master)
+* [repo](https://github.com/CaityHeath/12-express)
+* [travis](https://travis-ci.com/CaityHeath/12-express)
 
 ### Modules
 #### `modulename.js`
@@ -23,8 +22,7 @@ Usage Notes or examples
 
 ### Setup
 #### `.env` requirements
-* `PORT` - Port Number
-* `MONGODB_URI` - URL to the running mongo instance/db
+* `PORT` - 8080 or defined by ENV
 
 #### Running the app
 * `npm start`
@@ -38,5 +36,4 @@ Usage Notes or examples
 * What assertions were made?
 * What assertions need to be / should be made?
 
-#### UML
-Link to an image of the UML for your application and response to events
+Testing, tdb. Code is not yet complete
